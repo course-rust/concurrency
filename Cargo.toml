@@ -1,5 +1,5 @@
 [package]
-name = "template"
+name = "concurrency"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
@@ -10,3 +10,4 @@ license = "MIT"
 anyhow = "1.0.86"
 rand = "0.8.5"
 log = "0.4.22"
+oneshot = "0.1.8"
