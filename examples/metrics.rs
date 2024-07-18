@@ -1,5 +1,4 @@
-use std::thread;
-use std::time::Duration;
+use std::{thread, time::Duration};
 
 use anyhow::{Ok, Result};
 use rand::Rng;
@@ -25,7 +24,7 @@ fn main() -> Result<()> {
 
     loop {
         thread::sleep(Duration::from_secs(5));
-        println!("{:?}", metrics.snapshot().unwrap());
+        println!("{}", metrics);
     }
 
     #[allow(unreachable_code)]
