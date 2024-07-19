@@ -11,12 +11,12 @@ use std::{
 use anyhow::{anyhow, Result};
 
 #[derive(Debug, Clone)]
-pub struct Metrics {
+pub struct CMapMetrics {
     data: Arc<RwLock<HashMap<String, i64>>>,
 }
-impl Metrics {
+impl CMapMetrics {
     pub fn new() -> Self {
-        Metrics {
+        CMapMetrics {
             data: Arc::new(RwLock::new(HashMap::new())),
         }
     }
@@ -43,13 +43,13 @@ impl Metrics {
     }
 }
 
-impl Default for Metrics {
+impl Default for CMapMetrics {
     fn default() -> Self {
         Self::new()
     }
 }
 
-impl Display for Metrics {
+impl Display for CMapMetrics {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         let data = self.data.read().map_err(|_e| fmt::Error {})?;
         for (key, value) in data.iter() {
